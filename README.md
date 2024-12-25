@@ -21,6 +21,19 @@ HYAP Authentication Manager is a lightweight library designed to simplify the ge
 - **Token Expiration**: Set custom expiration times for tokens to ensure they are valid for a specific duration.
 - **Asymmetrics and Symmetrics Support**: Supports both symmetric (HMAC) and asymmetric (RSA) signing algorithms for token generation and validation.
 
+|Algorithm|Type|Key Type|Hash Function|
+|---|---|---|---|
+|HS256|HMAC (Symmetric)|Secret Key|SHA-256|
+|RS256|RSA (Asymmetric)|Public/Private Key|SHA-256|
+|RS384|RSA (Asymmetric)|Public/Private Key|SHA-384|
+|RS512|RSA (Asymmetric)|Public/Private Key|SHA-512|
+|ES256|ECDSA (Asymmetric)|Public/Private Key|SHA-256|
+|ES384|ECDSA (Asymmetric)|Public/Private Key|SHA-384|
+|ES512|ECDSA (Asymmetric)|Public/Private Key|SHA-512|
+|PS256|RSASSA-PSS (Asymmetric)|Public/Private Key|SHA-256|
+|PS384|RSASSA-PSS (Asymmetric)|Public/Private Key|SHA-384|
+|PS512|RSASSA-PSS (Asymmetric)|Public/Private Key|SHA-512|
+
 ## Usage
 ### Manual Installation via Github
 1. Clone Repository
