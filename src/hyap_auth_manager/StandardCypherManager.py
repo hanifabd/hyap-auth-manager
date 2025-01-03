@@ -109,7 +109,7 @@ class StandardCypherManager():
                 "encoded_data": f"{encoded_data_jwt}"
             }
         except Exception as e:
-            raise Exception(f"Failed to create access token: {e}")
+            raise Exception(f"Failed to encode data: {e}")
         
     def decode_data(self, PUBLIC_KEY: str, token: str):
         """
@@ -125,8 +125,6 @@ class StandardCypherManager():
         try:
             data = jwt.decode(token, PUBLIC_KEY, algorithms=self.crypto_algorithm)
             return data
-        except jwt.ExpiredSignatureError:
-            return {"error": "Token expired"}
-        except jwt.InvalidTokenError:
-            return {"error": "Token invalid"}
+        except Exception as e:
+            return {"error": e}
         
